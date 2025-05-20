@@ -60,6 +60,11 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel1.setText("Név");
 
         btnReset.setText("Reset");
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -231,6 +236,12 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_mnuKonfigBetoltesActionPerformed
+
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        txtNev.setText("");
+        cmbSzak.setSelectedIndex(0);
+        chbHirlevel.setSelected(true);
+    }//GEN-LAST:event_btnResetActionPerformed
 
     private String tartalom(){
         String nev = txtNev.getText();
