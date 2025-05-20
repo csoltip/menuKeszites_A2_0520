@@ -42,10 +42,13 @@
             <Property name="text" type="java.lang.String" value="Program"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+            <MenuItem class="javax.swing.JMenuItem" name="mnuPrgKiir">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jMenuItem1"/>
+                <Property name="text" type="java.lang.String" value="modell ki&#xed;r&#xe1;sa"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuPrgKiirActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

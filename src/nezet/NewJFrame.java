@@ -13,6 +13,9 @@ import modell.Konfiguracio;
 
 public class NewJFrame extends javax.swing.JFrame {
 
+    /* ADATTAGOK */
+    private Konfiguracio modell;
+    
     public NewJFrame() {
         initComponents();
     }
@@ -40,7 +43,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         mnuKonfigKilepes = new javax.swing.JMenuItem();
         mnuPrg = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        mnuPrgKiir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -135,8 +138,13 @@ public class NewJFrame extends javax.swing.JFrame {
 
         mnuPrg.setText("Program");
 
-        jMenuItem1.setText("jMenuItem1");
-        mnuPrg.add(jMenuItem1);
+        mnuPrgKiir.setText("modell kiírása");
+        mnuPrgKiir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuPrgKiirActionPerformed(evt);
+            }
+        });
+        mnuPrg.add(mnuPrgKiir);
 
         jMenuBar1.add(mnuPrg);
 
@@ -223,7 +231,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 
                 /* modell létrehozása */
                 //Konfiguracio modell = new Konfiguracio(nev, index, chb);
-                Konfiguracio modell = new Konfiguracio(egySor);
+                modell = new Konfiguracio(egySor);
                 
                 /* modell felhasználása: 
                 a nézet setterei paraméterként megkapják a modell gettereit
@@ -242,6 +250,18 @@ public class NewJFrame extends javax.swing.JFrame {
         cmbSzak.setSelectedIndex(0);
         chbHirlevel.setSelected(true);
     }//GEN-LAST:event_btnResetActionPerformed
+
+    private void mnuPrgKiirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuPrgKiirActionPerformed
+        String msg = "név: " + modell.getNev()
+                +"\nszak: %s(%d)".formatted("???", modell.getIndex())
+                +"\nhírlevél: " + (modell.isHirlevel()?"kér":"nem kér");
+        
+        try {
+            Files.writeString(Path.of("beszedesModell.txt"), msg);
+        } catch (IOException ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_mnuPrgKiirActionPerformed
 
     private String tartalom(){
         String nev = txtNev.getText();
@@ -306,7 +326,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JMenu mnuKonfig;
@@ -314,6 +333,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem mnuKonfigKilepes;
     private javax.swing.JMenuItem mnuKonfigMentes;
     private javax.swing.JMenu mnuPrg;
+    private javax.swing.JMenuItem mnuPrgKiir;
     private javax.swing.JTextField txtNev;
     // End of variables declaration//GEN-END:variables
 }
