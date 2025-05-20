@@ -25,18 +25,20 @@ public class NewJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtNev = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         chbHirlevel = new javax.swing.JCheckBox();
-        cmbSzak = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
+        txtNev = new javax.swing.JTextField();
+        cmbSzak = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        btnReset = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        mnuPrgBetoltes = new javax.swing.JMenuItem();
-        mnuPrgMentes = new javax.swing.JMenuItem();
+        mnuKonfig = new javax.swing.JMenu();
+        mnuKonfigBetoltes = new javax.swing.JMenuItem();
+        mnuKonfigMentes = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        mnuPrgKilepes = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        mnuKonfigKilepes = new javax.swing.JMenuItem();
+        mnuPrg = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -46,50 +48,91 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Név");
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Aktuális konfiguráció"));
 
         chbHirlevel.setSelected(true);
         chbHirlevel.setText("hírlevél");
 
-        cmbSzak.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--== Kiválasztott szak ==--", "Szoftverfejlesztő", "Rendszergazda", "Szoftverfejlesztő és tesztelő" }));
-
         jLabel2.setText("Szak");
 
-        jMenu1.setText("Konfiguráció");
+        cmbSzak.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--== Kiválasztott szak ==--", "Szoftverfejlesztő", "Rendszergazda", "Szoftverfejlesztő és tesztelő" }));
 
-        mnuPrgBetoltes.setText("Betöltés...");
-        mnuPrgBetoltes.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setText("Név");
+
+        btnReset.setText("Reset");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNev, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(cmbSzak, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(chbHirlevel))
+                    .addComponent(btnReset, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtNev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmbSzak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chbHirlevel))
+                .addGap(18, 18, 18)
+                .addComponent(btnReset)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        mnuKonfig.setText("Konfiguráció");
+
+        mnuKonfigBetoltes.setText("Betöltés...");
+        mnuKonfigBetoltes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnuPrgBetoltesActionPerformed(evt);
+                mnuKonfigBetoltesActionPerformed(evt);
             }
         });
-        jMenu1.add(mnuPrgBetoltes);
+        mnuKonfig.add(mnuKonfigBetoltes);
 
-        mnuPrgMentes.setText("Mentés...");
-        mnuPrgMentes.addActionListener(new java.awt.event.ActionListener() {
+        mnuKonfigMentes.setText("Mentés...");
+        mnuKonfigMentes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnuPrgMentesActionPerformed(evt);
+                mnuKonfigMentesActionPerformed(evt);
             }
         });
-        jMenu1.add(mnuPrgMentes);
-        jMenu1.add(jSeparator1);
+        mnuKonfig.add(mnuKonfigMentes);
+        mnuKonfig.add(jSeparator1);
 
-        mnuPrgKilepes.setText("Kilépés...");
-        mnuPrgKilepes.addActionListener(new java.awt.event.ActionListener() {
+        mnuKonfigKilepes.setText("Kilépés...");
+        mnuKonfigKilepes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnuPrgKilepesActionPerformed(evt);
+                mnuKonfigKilepesActionPerformed(evt);
             }
         });
-        jMenu1.add(mnuPrgKilepes);
+        mnuKonfig.add(mnuKonfigKilepes);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(mnuKonfig);
 
-        jMenu2.setText("Program");
+        mnuPrg.setText("Program");
 
         jMenuItem1.setText("jMenuItem1");
-        jMenu2.add(jMenuItem1);
+        mnuPrg.add(jMenuItem1);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(mnuPrg);
 
         setJMenuBar(jMenuBar1);
 
@@ -99,47 +142,30 @@ public class NewJFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNev, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel2)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(cmbSzak, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(chbHirlevel)))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtNev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbSzak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(chbHirlevel))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void mnuPrgKilepesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuPrgKilepesActionPerformed
+    private void mnuKonfigKilepesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuKonfigKilepesActionPerformed
         kilepes();
-    }//GEN-LAST:event_mnuPrgKilepesActionPerformed
+    }//GEN-LAST:event_mnuKonfigKilepesActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         //System.out.println("kilépés folyamatban...");
         kilepes();
     }//GEN-LAST:event_formWindowClosing
 
-    private void mnuPrgMentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuPrgMentesActionPerformed
+    private void mnuKonfigMentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuKonfigMentesActionPerformed
         //JFileChooser jfc = new JFileChooser();//Documents könnyvtár
         String hely = System.getProperty("user.dir");
         JFileChooser jfc = new JFileChooser(hely);//aktuális projekt könnyvtár
@@ -176,9 +202,9 @@ public class NewJFrame extends javax.swing.JFrame {
 //        } catch (IOException ex) {// generált kód!!!
 //            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
 //        }
-    }//GEN-LAST:event_mnuPrgMentesActionPerformed
+    }//GEN-LAST:event_mnuKonfigMentesActionPerformed
 
-    private void mnuPrgBetoltesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuPrgBetoltesActionPerformed
+    private void mnuKonfigBetoltesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuKonfigBetoltesActionPerformed
         /* a beolvasás alapszerkezete: */
         JFileChooser jfc = new JFileChooser(System.getProperty("user.dir"));//aktuális projekt könnyvtár
         int gomb = jfc.showSaveDialog(rootPane);//null | this <-- ez ua, mint rootPane
@@ -204,7 +230,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-    }//GEN-LAST:event_mnuPrgBetoltesActionPerformed
+    }//GEN-LAST:event_mnuKonfigBetoltesActionPerformed
 
     private String tartalom(){
         String nev = txtNev.getText();
@@ -264,18 +290,20 @@ public class NewJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnReset;
     private javax.swing.JCheckBox chbHirlevel;
     private javax.swing.JComboBox<String> cmbSzak;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JMenuItem mnuPrgBetoltes;
-    private javax.swing.JMenuItem mnuPrgKilepes;
-    private javax.swing.JMenuItem mnuPrgMentes;
+    private javax.swing.JMenu mnuKonfig;
+    private javax.swing.JMenuItem mnuKonfigBetoltes;
+    private javax.swing.JMenuItem mnuKonfigKilepes;
+    private javax.swing.JMenuItem mnuKonfigMentes;
+    private javax.swing.JMenu mnuPrg;
     private javax.swing.JTextField txtNev;
     // End of variables declaration//GEN-END:variables
 }
