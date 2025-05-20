@@ -1,1 +1,1 @@
-rókarudi 2 true
+RókaRudi 1 false
