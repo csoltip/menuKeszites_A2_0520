@@ -245,14 +245,13 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private String tartalom(){
         String nev = txtNev.getText();
-        //String szak = cmbSzak.getSelectedItem().toString();
-        String szak = (String)cmbSzak.getSelectedItem();
+        int index = cmbSzak.getSelectedIndex();
         boolean hirlevel = chbHirlevel.isSelected();
-        String msg = "név: " + nev
-                +"\nszak: %s(%d)".formatted(szak, cmbSzak.getSelectedIndex())
-                +"\nhírlevél: " + (hirlevel?"kér":"nem kér");
-        return msg;
+        final String SEP = " ";
+        
+        return nev+SEP+index+SEP+hirlevel;
     }
+    
     private void kilepes() throws HeadlessException {
         String msg = "Biztos kilépsz?";
         String cim = "KILÉPÉS";
