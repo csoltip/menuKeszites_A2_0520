@@ -170,11 +170,8 @@
         <Component class="javax.swing.JComboBox" name="cmbSzak">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
+              <StringArray count="1">
                 <StringItem index="0" value="--== Kiv&#xe1;lasztott szak ==--"/>
-                <StringItem index="1" value="Szoftverfejleszt&#x151;"/>
-                <StringItem index="2" value="Rendszergazda"/>
-                <StringItem index="3" value="Szoftverfejleszt&#x151; &#xe9;s tesztel&#x151;"/>
               </StringArray>
             </Property>
           </Properties>

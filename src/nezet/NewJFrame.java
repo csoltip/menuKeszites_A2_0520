@@ -18,6 +18,17 @@ public class NewJFrame extends javax.swing.JFrame {
     
     public NewJFrame() {
         initComponents();
+        final String[] szakok = Konfiguracio.VALASZTHATO_SZAKOK;
+//        /* hagyományos for: for tab */
+//        for (int i = 0; i < szakok.length; i++) {
+//            String szak = szakok[i];
+//            cmbSzak.addItem(szak);
+//        }
+        
+        /* továbbfejlesztett for: fore tab */
+        for (String szak : szakok) {
+            cmbSzak.addItem(szak);
+        }
     }
 
     /**
@@ -59,7 +70,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel2.setText("Szak");
 
-        cmbSzak.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--== Kiválasztott szak ==--", "Szoftverfejlesztő", "Rendszergazda", "Szoftverfejlesztő és tesztelő" }));
+        cmbSzak.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--== Kiválasztott szak ==--" }));
 
         jLabel1.setText("Név");
 
@@ -252,8 +263,10 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void mnuPrgKiirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuPrgKiirActionPerformed
+        int index = modell.getIndex();
+        String szak = Konfiguracio.VALASZTHATO_SZAKOK[index-1];//cmb tartalmaz már 1 indexet, a 0. indexet
         String msg = "név: " + modell.getNev()
-                +"\nszak: %s(%d)".formatted("???", modell.getIndex())
+                +"\nszak: %s(%d)".formatted(szak, index)
                 +"\nhírlevél: " + (modell.isHirlevel()?"kér":"nem kér");
         
         try {

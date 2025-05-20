@@ -2,6 +2,9 @@ package modell;
 
 public class Konfiguracio{
     /* ADATTAGOK */
+    public static final String[] VALASZTHATO_SZAKOK 
+            = {"Szoftverfejlesztő","Rendszergazda","Szoftverfejlesztő és tesztelő"};
+    
     private String nev;
     private int index;
     private boolean hirlevel;
